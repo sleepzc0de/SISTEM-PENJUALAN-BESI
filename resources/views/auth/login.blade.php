@@ -53,14 +53,6 @@
                                     <input type="password" name="password" class="form-control form-control-lg"
                                         placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-group text-center">
                                     <div class="col-xs-12 p-b-20">
                                         <button class="btn btn-block btn-lg btn-info" type="submit">Log In</button>

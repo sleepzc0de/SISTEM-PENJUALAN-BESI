@@ -13,8 +13,8 @@
                                 class="rounded-circle img-fluid" />
                         </div>
                         <div class="user-content hide-menu m-t-10">
-                            <h5 class="m-b-10 user-name font-medium">Stiven Tannako</h5>
-                            <p>Paris Wrought Iron</p>
+                            <h5 class="m-b-10 user-name font-medium">{{ Auth::user()->username }}</h5>
+                            <p>Pelanggan</p>
                         </div>
                     </div>
                     <!-- End User Profile-->

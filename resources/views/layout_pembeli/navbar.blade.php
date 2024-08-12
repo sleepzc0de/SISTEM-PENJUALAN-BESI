@@ -11,17 +11,19 @@
                     <b class="logo-icon">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="{{ asset('assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
+                        <img src="{{ asset('assets/images/logo PARIS WWROUGHT IRON.svg') }}" alt="homepage"
+                            class="dark-logo" />
                         <!-- Light Logo icon -->
-                        <img src="{{ asset('assets/images/logo-light-icon.png') }}" alt="homepage" class="light-logo" />
+                        <img src="{{ asset('assets/images/logo PARIS WWROUGHT IRON.svg') }}" alt="homepage"
+                            class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                         <!-- dark Logo text -->
-                        <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                        <img src="{{ asset('assets/images/logotext1.svg') }}" alt="homepage" class="dark-logo" />
                         <!-- Light Logo text -->
-                        <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" />
+                        <img src="{{ asset('assets/images/logotext1.svg') }}" class="light-logo" alt="homepage" />
                     </span>
                 </a>
                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
@@ -67,14 +69,12 @@
                                         class="img-circle" width="60">
                                 </div>
                                 <div class="m-l-10">
-                                    <h4 class="m-b-0">Steven Tannako</h4>
-                                    <p class=" m-b-0">ayongparis@gmail.com</p>
+                                    <h4 class="m-b-0">{{ Auth::user()->username }}</h4>
+                                    <p class=" m-b-0">{{ Auth::user()->email }}</p>
                                 </div>
                             </div>
-                            <a class="dropdown-item" href="https://myprofile.microsoft.com/">
+                            <a class="dropdown-item" href="{{ route('myprofilecard') }}">
                                 <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                            <a class="dropdown-item" href="https://wallet.google/">
-                                <i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('mainpage.index') }}">
                                 <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>

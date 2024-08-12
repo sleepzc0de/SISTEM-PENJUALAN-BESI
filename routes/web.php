@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\AdminOrderController;
+use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\PenjualProductController;
 use App\Http\Controllers\PenjualDashboardController;
 
@@ -15,6 +16,10 @@ Route::get('/', [MainPageController::class, 'index'])->name('mainpage.index');
 Route::get('/maps', function () {
     return view('maps');
 })->name('maps');
+
+Route::get('/myprofile', function () {
+    return view('myprofilecard');
+})->name('myprofilecard');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
@@ -51,10 +56,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/histori', [PenjualDashboardController::class, 'historipenjual'])->name('histori_penjual');
     Route::get('/profilperusahaan', [PenjualDashboardController::class, 'profiperusahaan'])->name('profil_perusahaan');
 
-    Route::get('/admin', function () {
-        return view('dashboard_admin');
-    })->name('dashboard_admin');
+    // Route::get('/admin', function () {
+    //     return view('dashboard_admin');
+    // })->name('dashboard_admin');
 });
+Route::get('/admin', [DashboardAdminController::class, 'riwayat'])->name('dashboard_admin');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/orders', [AdminOrderController::class, 'index'])->name('orders.index');

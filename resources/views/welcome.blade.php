@@ -44,8 +44,8 @@
 
                     <!-- Logo will be here -->
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{ asset('assets/images/logo-icon.png') }}" alt="admin template" />
-                        <img src="{{ asset('assets/images/logo-text.png') }}" alt="admin template" />
+                        <img src="{{ asset('assets/images/logo IRON .svg') }}" alt="admin template" />
+                        <img src="{{ asset('assets/images/logotext.svg') }}" alt="admin template" />
                     </a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -96,6 +96,7 @@
 
     <!--Custom JavaScript -->
     <script src="{{ asset('assets/js/custom.min.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>

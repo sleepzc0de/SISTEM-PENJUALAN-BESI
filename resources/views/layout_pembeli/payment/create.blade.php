@@ -50,26 +50,39 @@
                 <label for="bank" class="form-label">Pilih Bank</label>
                 <select class="form-control" id="bank" name="bank">
                     <option value="" selected disabled>Pilih Bank</option>
-                    <option value="BCA">BCA</option>
-                    <option value="BRI">BRI</option>
-                    <option value="Mandiri">Mandiri</option>
-                    <option value="BNI">BNI</option>
-                    <option value="BSI">BSI</option>
-                    <option value="Permata">Permata</option>
-                    <option value="Cimb Niaga">Cimb Niaga</option>
+                    <option value="BCA" data-account="9876543210">BCA</option>
+                    <option value="BRI" data-account="8765432109">BRI</option>
+                    <option value="Mandiri" data-account="7654321098">Mandiri</option>
+                    <option value="BNI" data-account="6543210987">BNI</option>
+                    <option value="BSI" data-account="5432109876">BSI</option>
+                    <option value="Permata" data-account="4321098765">Permata</option>
+                    <option value="Cimb Niaga" data-account="3210987654">Cimb Niaga</option>
                 </select>
+                <div id="bank_account" class="mt-3" style="display: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Detail Rekening Bank</h5>
+                            <p class="card-text">Nama Rekening: Paris Wrought Iron</p>
+                            <p class="card-text">Nomor Rekening: <span id="account_number" class="font-weight-bold"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="qris_options" class="mb-3" style="display: none;">
                 <label for="qris" class="form-label">Pilih QRIS</label>
                 <select class="form-control" id="qris" name="qris">
                     <option value="" selected disabled>Pilih QRIS</option>
-                    <option value="Dana">Dana</option>
-                    <option value="Gopay">Gopay</option>
-                    <option value="Ovo">Ovo</option>
-                    <option value="Shopee Pay">Shopee Pay</option>
-                    <option value="Indomaret">Indomaret</option>
-                    <option value="Alfamart">Alfamart</option>
+                    <option value="Dana" data-qr="{{ asset('assets/images/barcode.png') }}">Dana</option>
+                    <option value="Gopay" data-qr="{{ asset('assets/images/barcode.png') }}">Gopay</option>
+                    <option value="Ovo" data-qr="{{ asset('assets/images/barcode.png') }}">Ovo</option>
+                    <option value="Shopee Pay" data-qr="{{ asset('assets/images/barcode.png') }}">Shopee Pay</option>
+                    <option value="Indomaret" data-qr="{{ asset('assets/images/barcode.png') }}">Indomaret</option>
+                    <option value="Alfamart" data-qr="{{ asset('assets/images/barcode.png') }}">Alfamart</option>
                 </select>
+                <div id="qris_image" class="mt-2" style="display: none;">
+                    <img id="qr_code" src="" alt="QR Code" style="max-width: 100%;">
+                </div>
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Bayar</button>
@@ -93,6 +106,30 @@
         function showPaymentOptions(method) {
             document.getElementById('bank_options').style.display = method === 'bank_transfer' ? 'block' : 'none';
             document.getElementById('qris_options').style.display = method === 'qris' ? 'block' : 'none';
+            if (method !== 'bank_transfer') {
+                document.getElementById('bank_account').style.display = 'none';
+                document.getElementById('account_number').textContent = '';
+            }
+            if (method !== 'qris') {
+                document.getElementById('qris_image').style.display = 'none';
+                document.getElementById('qr_code').src = '';
+            }
         }
+
+        document.getElementById('bank').addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const accountNumber = selectedOption.getAttribute('data-account');
+
+            document.getElementById('account_number').textContent = accountNumber;
+            document.getElementById('bank_account').style.display = 'block';
+        });
+
+        document.getElementById('qris').addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const qrCodeUrl = selectedOption.getAttribute('data-qr');
+
+            document.getElementById('qr_code').src = qrCodeUrl;
+            document.getElementById('qris_image').style.display = 'block';
+        });
     </script>
 @endsection

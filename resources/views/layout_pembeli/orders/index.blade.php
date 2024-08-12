@@ -13,9 +13,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Pembeli</th>
-                    <th>Penjual</th>
                     <th>Produk</th>
                     <th>Jumlah</th>
                     <th>Harga</th>
@@ -28,9 +25,6 @@
             <tbody>
                 @foreach ($orders as $order)
                     <tr>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->buyer->username }}</td>
-                        <td>{{ $order->seller->username }}</td>
                         <td>{{ $order->product->name }}</td>
                         <td>{{ $order->quantity }}</td>
                         <td>{{ $order->price }}</td>

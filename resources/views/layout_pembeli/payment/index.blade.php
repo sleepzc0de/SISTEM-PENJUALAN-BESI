@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <h2>Histori Pembayaran</h2>
-        <table class="table">
-            <thead>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
                 <tr>
                     <th>ID Pembayaran</th>
                     <th>ID Pesanan</th>

@@ -17,38 +17,24 @@
                     <div class="col-md-6">
                         <div class="card bg-success text-white">
                             <div class="card-header">
-                                <h3 class="card-title">Pesanan Terbaru</h3>
+                                <h3 class="card-title">Daftar Pesanan </h3>
                                 <i class="fas fa-shopping-cart"></i>
                             </div>
                             <div class="card-body">
-                                <p>2 pesanan baru dalam proses.</p>
-                                <a href="#" class="btn btn-sm btn-light">Lihat Detail</a>
+                                <p>Daftar pesanan baru dalam proses</p>
+                                <a href="{{ route('order.index') }}" class="btn btn-sm btn-light">Lihat Detail</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card bg-info text-white">
                             <div class="card-header">
-                                <h3 class="card-title">Riwayat Pesanan</h3>
+                                <h3 class="card-title">Riwayat Pembayaran</h3>
                                 <i class="fas fa-history"></i>
                             </div>
                             <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <a href="#" class="text-white">
-                                            <span class="float-right badge badge-pill badge-primary">Terkirim</span>
-                                            #INV-1234 - Jerjak Jendela 10kg
-                                        </a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <a href="#" class="text-white">
-                                            <span class="float-right badge badge-pill badge-warning">Menunggu
-                                                Pembayaran</span>
-                                            #INV-5678 - Pintu Besi 2m
-                                        </a>
-                                    </li>
-                                </ul>
-                                <a href="#" class="btn btn-sm btn-light">Lihat Semua</a>
+                                <p>Daftar Riwayat Transaksi Pembayaran</p>
+                                <a href="{{ route('payment.index') }}" class="btn btn-sm btn-light">Lihat Semua</a>
                             </div>
                         </div>
                     </div>
@@ -65,19 +51,33 @@
                                 <div class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="{{ asset('images/besi-baja.jpg') }}" class="d-block w-100"
-                                                alt="Jerjak Jendela">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Jerjak Jendela</h5>
-                                                <p>Harga: Rp1.500</p>
+                                            <img src="{{ asset('storage/product_photos/JkLMSG0tq5LpplWChzoHHROFVNrGEPA301kahDmI.jpg') }}"
+                                                class="d-block w-100" alt="Pintu Besi"
+                                                style="width: 80%; height: 300px; object-fit: cover;">
+                                            <div class="carousel-caption d-none d-md-block"></div>
+                                            <div class="text-center mt-2">
+                                                <h5>Pintu besi</h5>
+                                                <p>Harga: Rp2.000.000</p>
                                             </div>
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{ asset('images/pipa-besi.jpg') }}" class="d-block w-100"
-                                                alt="Pintu Besi">
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h5>Pintu Besi</h5>
-                                                <p>Harga: Rp2.000</p>
+                                            <img src="{{ asset('storage/product_photos/tTbSsGxbUslW8ELy5reZ4BU3ycAHKjpx8LVeo2Ei.jpg') }}"
+                                                class="d-block w-100" alt="Jerjak Jendela"
+                                                style="width: 80%; height: 250px; object-fit: cover;">
+                                            <div class="carousel-caption d-none d-md-block"></div>
+                                            <div class="text-center mt-2">
+                                                <h5>Jerjak Jendela</h5>
+                                                <p>Harga: Rp1.000.000</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="{{ asset('storage/product_photos/LADzUzckyuVtmfdq0uR5fBq11CV4gsWl3VBfWNqR.jpg') }}"
+                                                class="d-block w-100" alt="Tangga Melingkar"
+                                                style="width: 80%; height: 450px; object-fit: cover;">
+                                            <div class="carousel-caption d-none d-md-block"></div>
+                                            <div class="text-center mt-2">
+                                                <h5>Tangga Model Melingkar</h5>
+                                                <p>Harga: Rp3.000.000</p>
                                             </div>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@
                                 <div class="card-body">
                                     <p>Nama: {{ Auth::user()->username }}</p>
                                     <p>Email: {{ Auth::user()->email }}</p>
-                                    <a href="#" class="btn btn-sm btn-light">Ubah Profil</a>
+                                    <a href="{{ route('profile.edit') }}" class="btn btn-sm btn-light">Ubah Profil</a>
                                 </div>
                             </div>
                         </div>
